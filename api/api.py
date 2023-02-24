@@ -17,9 +17,9 @@ settings = get_settings()
 DB_URI = settings["DB_URI"]
 RESULT_PAGE_LIMIT = settings["RESULT_PAGE_LIMIT"]
 
-@app.route('/time')
-def get_current_time():
-    return {'time': time.time()}
+@app.route('/health')
+def get_health():
+    return {'msg': 200}
 
 @app.route('/search', methods=['POST'])
 def get_search():

@@ -1,10 +1,10 @@
 import Table from 'react-bootstrap/Table';
-
+import HighlightedText from './HighlightedText';
 function ResultsTable(props) {
 
   const renderData = () => {
     const pageMeta = props.pageMeta;
-
+    const searchTerm = props.searchTerm;
     if (pageMeta["initial_load"] == true) {
         return <></>
     } else {
@@ -15,7 +15,7 @@ function ResultsTable(props) {
                 <td>{idx}</td>
                 <td>{x["act"]}</td>
                 <td>{x["est_section_num"]}</td>
-                <td>{x["section_text"]}</td>
+                <td><HighlightedText highlight={searchTerm} text={x["section_text"]}/></td>
             </tr>
             ))}
             </tbody>)

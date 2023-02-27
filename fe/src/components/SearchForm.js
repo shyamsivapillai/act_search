@@ -67,7 +67,7 @@ function BasicExample() {
         </Row>
 
         <Row className="justify-content-md-center">
-            <ResultsTable pageMeta={results} />
+            <ResultsTable searchTerm={search} pageMeta={results} />
         </Row>
         </Container>
     );
